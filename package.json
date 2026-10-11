@@ -1,9 +1,0 @@
-{
-  "name": "airtel-style-loan-demo",
-  "version": "1.0.0",
-  "description": "Independent loan application workflow demo; not affiliated with Airtel",
-  "main": "server.js",
-  "scripts": {"start": "node server.js"},
-  "engines": {"node": ">=20"},
-  "dependencies": {"express": "^4.21.2"}
-}
