@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TNM Malawi — Reference Demo</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="top"><div class="menu" aria-hidden="true">☰</div><div class="brand"><span class="mark">T</span><div><strong>TNM Malawi</strong><small>REFERENCE DEMO</small></div></div></header>
+<div class="demo-banner">DEMO ONLY — Not an official TNM service</div>
+<main>
+<section class="hero"><div class="pin">⌖</div><h1>Application Reference</h1><p>Use reference numbers only. Never enter a PIN, password, or SMS verification code.</p></section>
+<div class="steps"><span class="active" id="stepOne">1. Reference</span><span id="stepTwo">2. Confirmation</span></div>
+<section class="card" id="page1">
+<label for="phone">Mobile number (optional)</label><input id="phone" inputmode="tel" placeholder="e.g. 0881234567" autocomplete="tel">
+<label for="reference">Application reference number</label><input id="reference" maxlength="32" placeholder="Enter reference number" autocomplete="off">
+<p class="hint">This demo accepts a reference ID only — not a PIN or verification code.</p>
+<button id="continue">Continue <span>→</span></button><p class="error" id="error1" role="alert"></p>
+</section>
+<section class="card hidden" id="page2">
+<h2>Reference confirmation</h2><p>Your reference is ready for review.</p>
+<div class="refbox">Reference number <strong id="refDisplay">—</strong></div>
+<div class="timer"><div class="ring"><strong id="seconds">30</strong><small>SEC</small></div><p id="timerLabel">You can request another reference when the timer ends.</p></div>
+<button id="finish">Submit reference</button>
+<button class="secondary hidden" id="resend">Tuma tena ↻</button>
+<p class="notice" id="notice" role="status"></p><p class="error" id="error2" role="alert"></p>
+</section>
+<footer>Reference-number demo • Do not submit confidential credentials.</footer>
+</main>
+<script src="/app.js"></script>
+</body></html>
